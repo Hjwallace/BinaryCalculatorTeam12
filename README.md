@@ -1,11 +1,11 @@
 # BinaryCalculatorTeam12
 ---------------------------
 
-Hunter - UI
-Jake - Addition/Subtraction
-Bryce - Square/Square Root
-Riley - Division
-Jacob - Multiplication
+Hunter - UI  
+Jake - Addition/Subtraction  
+Bryce - Square/Square Root  
+Riley - Division  
+Jacob - Multiplication  
 
 ALL: Review Code, PRs, and Unit Testing
 
