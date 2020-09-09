@@ -1,7 +1,6 @@
 package com.company;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,7 +9,7 @@ import java.awt.event.ActionListener;
 public class Main {
 
     private JFrame frame;
-    private JPanel panelBasicFunctions;
+    private JPanel panelFunctions;
     private JPanel panelInputBoxes;
     private JPanel panelOutPut;
 
@@ -104,7 +103,7 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 /*
-                    CLEAR INPUT OUTPUT
+                    CLEAR INPUT AND OUTPUT
                  */
             }
         });
@@ -115,9 +114,9 @@ public class Main {
         panelInputBoxes.setLayout(new GridLayout(1,3,5,150));
         panelInputBoxes.setBorder(new EmptyBorder(new Insets(20, 300, 20, 300)));
 
-        panelBasicFunctions = new JPanel();
-        panelBasicFunctions.setLayout(new GridLayout(3,4,15,15));
-        panelBasicFunctions.setBorder(BorderFactory.createEmptyBorder(25,150,25,150));
+        panelFunctions = new JPanel();
+        panelFunctions.setLayout(new GridLayout(3,4,15,15));
+        panelFunctions.setBorder(BorderFactory.createEmptyBorder(25,150,25,150));
 
         panelOutPut = new JPanel();
         panelOutPut.setLayout(new GridLayout(1,3,5,5));
@@ -137,19 +136,19 @@ public class Main {
         panelOutPut.add(outputLabel);
         panelOutPut.add(outputField);
 
-        panelBasicFunctions.add(buttonAddition);
-        panelBasicFunctions.add(buttonSubtraction);
-        panelBasicFunctions.add(buttonSquare);
-        panelBasicFunctions.add(buttonDivide);
-        panelBasicFunctions.add(buttonMultiplication);
-        panelBasicFunctions.add(buttonSquareRoot);
-        panelBasicFunctions.add(buttonCompute);
-        panelBasicFunctions.add(buttonToggle);
-        panelBasicFunctions.add(buttonClear);
+        panelFunctions.add(buttonAddition);
+        panelFunctions.add(buttonSubtraction);
+        panelFunctions.add(buttonSquare);
+        panelFunctions.add(buttonDivide);
+        panelFunctions.add(buttonMultiplication);
+        panelFunctions.add(buttonSquareRoot);
+        panelFunctions.add(buttonCompute);
+        panelFunctions.add(buttonToggle);
+        panelFunctions.add(buttonClear);
 
 
         frame.add(panelInputBoxes,BorderLayout.NORTH);
-        frame.add(panelBasicFunctions,BorderLayout.CENTER);
+        frame.add(panelFunctions,BorderLayout.CENTER);
         frame.add(panelOutPut,BorderLayout.SOUTH);
 
 
