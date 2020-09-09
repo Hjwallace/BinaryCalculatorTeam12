@@ -9,9 +9,10 @@ import java.awt.event.ActionListener;
 public class Main {
 
     private JFrame frame;
-    private JPanel panelFunctions;
-    private JPanel panelInputBoxes;
+    private JPanel panelFunctionsRight;
+    private JPanel panelInputBox;
     private JPanel panelOutPut;
+    private JPanel panelFunctionsLeft;
 
     public Main() {
 
@@ -58,7 +59,7 @@ public class Main {
             }
         });
 
-        JButton buttonSquare = new JButton("^2");
+        JButton buttonSquare = new JButton("x²");
         buttonSquare.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -107,19 +108,40 @@ public class Main {
                  */
             }
         });
+
+        JButton buttonZero = new JButton("0");
+        buttonZero.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        JButton buttonOne = new JButton("1");
+        buttonOne.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         //------------------------------------------------------------------------
 
         //Panels
-        panelInputBoxes = new JPanel();
-        panelInputBoxes.setLayout(new GridLayout(1,3,5,150));
-        panelInputBoxes.setBorder(new EmptyBorder(new Insets(20, 300, 20, 300)));
+        panelInputBox = new JPanel();
+        panelInputBox.setLayout(new FlowLayout());
+        panelInputBox.setBorder(new EmptyBorder(new Insets(20, 300, 20, 300)));
 
-        panelFunctions = new JPanel();
-        panelFunctions.setLayout(new GridLayout(3,4,15,15));
-        panelFunctions.setBorder(BorderFactory.createEmptyBorder(25,150,25,150));
+        panelFunctionsLeft = new JPanel();
+        panelFunctionsLeft.setLayout(new GridLayout(3,4,15,15));
+        panelFunctionsLeft.setBorder(BorderFactory.createEmptyBorder(25,150,25,50));
+
+
+        panelFunctionsRight = new JPanel();
+        panelFunctionsRight.setLayout(new GridLayout(3,4,15,15));
+        panelFunctionsRight.setBorder(BorderFactory.createEmptyBorder(25,50,25,75));
 
         panelOutPut = new JPanel();
-        panelOutPut.setLayout(new GridLayout(1,3,5,5));
+        panelOutPut.setLayout(new FlowLayout());
         panelOutPut.setBorder(BorderFactory.createEmptyBorder(25,300,75,300));
 
 
@@ -127,8 +149,8 @@ public class Main {
         //-------------------------------------------------------------------------------------------------
         JLabel inputLabel = new JLabel("Input: ");
         JTextArea inputField = new JTextArea(1,15);
-        panelInputBoxes.add(inputLabel);
-        panelInputBoxes.add(inputField);
+        panelInputBox.add(inputLabel);
+        panelInputBox.add(inputField);
 
         JLabel outputLabel = new JLabel("Output: ");
         JTextArea outputField = new JTextArea(1,15);
@@ -136,19 +158,23 @@ public class Main {
         panelOutPut.add(outputLabel);
         panelOutPut.add(outputField);
 
-        panelFunctions.add(buttonAddition);
-        panelFunctions.add(buttonSubtraction);
-        panelFunctions.add(buttonSquare);
-        panelFunctions.add(buttonDivide);
-        panelFunctions.add(buttonMultiplication);
-        panelFunctions.add(buttonSquareRoot);
-        panelFunctions.add(buttonCompute);
-        panelFunctions.add(buttonToggle);
-        panelFunctions.add(buttonClear);
+        panelFunctionsLeft.add(buttonZero);
+        panelFunctionsLeft.add(buttonOne);
+
+        panelFunctionsLeft.add(buttonAddition);
+        panelFunctionsLeft.add(buttonSubtraction);
+        panelFunctionsRight.add(buttonSquare);
+        panelFunctionsLeft.add(buttonDivide);
+        panelFunctionsLeft.add(buttonMultiplication);
+        panelFunctionsRight.add(buttonSquareRoot);
+        panelFunctionsRight.add(buttonCompute);
+        panelFunctionsRight.add(buttonToggle);
+        panelFunctionsRight.add(buttonClear);
 
 
-        frame.add(panelInputBoxes,BorderLayout.NORTH);
-        frame.add(panelFunctions,BorderLayout.CENTER);
+        frame.add(panelInputBox,BorderLayout.NORTH);
+        frame.add(panelFunctionsLeft, BorderLayout.BEFORE_LINE_BEGINS);
+        frame.add(panelFunctionsRight,BorderLayout.CENTER);
         frame.add(panelOutPut,BorderLayout.SOUTH);
 
 
