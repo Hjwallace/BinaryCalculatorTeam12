@@ -41,10 +41,14 @@ public class Main {
         buttonMultiplication.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*
-                    ENTER MULTIPLICATION CODE HERE
-                 */
-
+                String binary1, binary2;
+                JTextArea inputField = (JTextArea) panelInputBoxes.getComponent(1);
+                binary1 = inputField.getText();
+                int decimal1 = Integer.parseInt(binary1,2);
+                binary2 = inputField.getText();
+                int decimal2 = Integer.parseInt(binary2,2);
+                JTextArea outputfield = (JTextArea) panelOutPut.getComponent(1);
+                outputfield.setText(Integer.toString(decimal1 * decimal2));
             }
         });
 
@@ -162,3 +166,6 @@ public class Main {
         new Main();
     }
 }
+
+
+
