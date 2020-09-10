@@ -1,4 +1,6 @@
-package com.company;
+package com.company.view;
+
+import com.company.model.TwoIntegerCalculator;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
