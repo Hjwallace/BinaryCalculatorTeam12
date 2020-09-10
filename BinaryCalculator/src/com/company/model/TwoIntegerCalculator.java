@@ -17,25 +17,30 @@ public class TwoIntegerCalculator {
         return "*";
     }
 
-    public static int equals(String binaryString){
-        int finalValue = 0; //dummy value
-        int decimalValue1 = Integer.parseInt(binary1,2);
-        int decimalValue2 = Integer.parseInt(binary2,2);
+    public static String equals(String first, String second, String operator){
+        int finalValue = 0;
+        int firstBinary = Integer.parseInt(first,2);
+        int secondBinary = Integer.parseInt(second,2);
 
         if (operator.equals("*")){
-            finalValue = decimalValue1 * decimalValue2;
-            return finalValue;
+            finalValue = firstBinary * secondBinary;
         }
         if (operator.equals("+")){
-            finalValue = decimalValue1 + decimalValue2;
+            finalValue = firstBinary + secondBinary;
         }
         if (operator.equals("-")){
-            finalValue = decimalValue1 - decimalValue2;
+            finalValue = firstBinary - secondBinary;
         }
         if (operator.equals("/")){
-            finalValue = decimalValue1 / decimalValue2;
+            finalValue = firstBinary / secondBinary;
         }
-        return finalValue;
+        return Integer.toBinaryString(finalValue);
+    }
+
+    public static String toggleBinaryDecimal(String value, boolean isBinary){
+        String result = isBinary ? String.valueOf(Integer.parseInt(value, 2)) :
+                Integer.toBinaryString(Integer.parseInt(value));
+        return result;
     }
 
 }

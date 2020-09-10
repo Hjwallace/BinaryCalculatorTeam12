@@ -16,6 +16,11 @@ public class Main {
     private JPanel panelOutPut;
     private JPanel panelFunctionsLeft;
     private TwoIntegerCalculator TwointegerCalculator;
+    private String firstBinary;
+    private JTextArea inputField;
+    private JTextArea outputField;
+    private String operator;
+    private boolean isBinary = true;
 
     public Main() {
 
@@ -27,8 +32,10 @@ public class Main {
         buttonAddition.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //count++;
-                //label.setText("I'm testing " + count);
+                inputField = (JTextArea) panelInputBox.getComponent(1);
+                firstBinary = inputField.getText();
+                inputField.setText("");
+                operator = "+";
             }
         });
 
@@ -36,8 +43,10 @@ public class Main {
         buttonSubtraction.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //count--;
-                //label.setText("I'm testing " + count);
+                inputField = (JTextArea) panelInputBox.getComponent(1);
+                firstBinary = inputField.getText();
+                inputField.setText("");
+                operator = "-";
             }
         });
 
@@ -45,11 +54,10 @@ public class Main {
         buttonMultiplication.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JTextArea inputField = (JTextArea) panelInputBox.getComponent(1);
-                String binary1 = inputField.getText();
-                TwoIntegerCalculator.multiply(binary1);
+                inputField = (JTextArea) panelInputBox.getComponent(1);
+                firstBinary = inputField.getText();
                 inputField.setText("");
-
+                operator = "*";
             }
         });
 
@@ -57,9 +65,10 @@ public class Main {
         buttonDivide.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                 /*
-                    ENTER DIVISION CODE HERE
-                 */
+                inputField = (JTextArea) panelInputBox.getComponent(1);
+                firstBinary = inputField.getText();
+                inputField.setText("");
+                operator = "/";
             }
         });
 
@@ -87,10 +96,9 @@ public class Main {
         buttonCompute.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JTextArea inputField = (JTextArea) panelInputBox.getComponent(1);
-                JTextArea outputField = (JTextArea) panelOutPut.getComponent(1);
-                String binary2 = inputField.getText();
-                outputField.setText(String.valueOf(TwoIntegerCalculator.equals(binary2)));
+                outputField = (JTextArea) panelOutPut.getComponent(1);
+                String secondBinary = inputField.getText();
+                outputField.setText(TwoIntegerCalculator.equals(firstBinary, secondBinary, operator));
             }
         });
 
@@ -98,9 +106,8 @@ public class Main {
         buttonToggle.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*
-                    CONVERT BINARY TO DECIMAL, VICE VERSA
-                 */
+                outputField.setText(TwoIntegerCalculator.toggleBinaryDecimal(outputField.getText(), isBinary));
+                isBinary = !isBinary;
             }
         });
 
