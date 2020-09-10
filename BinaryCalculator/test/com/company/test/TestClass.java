@@ -1,6 +1,7 @@
 package com.company.test;
 
 import com.company.model.SingleIntegerCalculator;
+import com.company.model.TwoIntegerCalculator;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -63,6 +64,12 @@ public class TestClass {
         SingleIntegerCalculator calculator = new SingleIntegerCalculator();
         int actual = calculator.calculationOfBinary("1001110001", SQUARE_ROOT);
         Assertions.assertEquals(11001, actual);
+    }
+
+    @Test
+    public void testAddition(){
+        TwoIntegerCalculator calculator = new TwoIntegerCalculator();
+        // will add more after equals method is finished
     }
 
 }
