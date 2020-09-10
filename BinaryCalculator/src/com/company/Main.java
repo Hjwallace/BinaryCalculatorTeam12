@@ -13,6 +13,9 @@ public class Main {
     private JPanel panelInputBox;
     private JPanel panelOutPut;
     private JPanel panelFunctionsLeft;
+    private String binary1;
+    private String operator;
+    private String binary2;
 
     public Main() {
 
@@ -42,14 +45,11 @@ public class Main {
         buttonMultiplication.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String binary1, binary2;
-                JTextArea inputField = (JTextArea) panelInputBoxes.getComponent(1);
+                operator = "*";
+                JTextArea inputField = (JTextArea) panelInputBox.getComponent(1);
                 binary1 = inputField.getText();
-                int decimal1 = Integer.parseInt(binary1,2);
-                binary2 = inputField.getText();
-                int decimal2 = Integer.parseInt(binary2,2);
-                JTextArea outputfield = (JTextArea) panelOutPut.getComponent(1);
-                outputfield.setText(Integer.toString(decimal1 * decimal2));
+                inputField.setText("");
+
             }
         });
 
@@ -87,9 +87,15 @@ public class Main {
         buttonCompute.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*
-                    SAVE FIRST NUMBER, FIND OPERATION, GET SECOND NUMBER, DO MATH
-                 */
+                JTextArea inputField = (JTextArea) panelInputBox.getComponent(1);
+                JTextArea outputfield = (JTextArea) panelOutPut.getComponent(1);
+                binary2 = inputField.getText();
+                if(operator.equals("*")){
+                    int decimalValue1 = Integer.parseInt(binary1,2);
+                    int decimalValue2 = Integer.parseInt(binary2,2);
+                    int multipliedValue = decimalValue1 * decimalValue2;
+                    outputfield.setText(Integer.toString(multipliedValue));
+                }
             }
         });
 
@@ -117,6 +123,10 @@ public class Main {
         buttonZero.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                JTextArea inputField = (JTextArea) panelInputBox.getComponent(1);
+                String oldString = inputField.getText();
+                String newString = oldString + "0";
+                inputField.setText(newString);
 
             }
         });
@@ -125,7 +135,10 @@ public class Main {
         buttonOne.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                JTextArea inputField = (JTextArea) panelInputBox.getComponent(1);
+                String oldString = inputField.getText();
+                String newString = oldString + "1";
+                inputField.setText(newString);
             }
         });
         //------------------------------------------------------------------------
