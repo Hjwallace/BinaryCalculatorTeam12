@@ -179,6 +179,7 @@ public class Main {
 
         JLabel outputLabel = new JLabel("Output: ");
         JTextArea outputField = new JTextArea(1,15);
+        inputField.setEditable(false);
         outputField.setEditable(false);
         panelOutPut.add(outputLabel);
         panelOutPut.add(outputField);

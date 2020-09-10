@@ -69,7 +69,28 @@ public class TestClass {
     @Test
     public void testAddition(){
         TwoIntegerCalculator calculator = new TwoIntegerCalculator();
-        // will add more after equals method is finished
+        String actual = calculator.equals("110","110","+");
+        Assertions.assertEquals("1100",actual);
+    }
+
+    @Test
+    public void testSubtraction(){
+        TwoIntegerCalculator calculator = new TwoIntegerCalculator();
+        String actual = calculator.equals("110","10","-");
+        Assertions.assertEquals("100",actual);
+    }
+    @Test
+    public void testMultiply(){
+        TwoIntegerCalculator calculator = new TwoIntegerCalculator();
+        String actual = calculator.equals("110","110","*");
+        Assertions.assertEquals("100100",actual);
+    }
+
+    @Test
+    public void testDivision(){
+        TwoIntegerCalculator calculator = new TwoIntegerCalculator();
+        String actual = calculator.equals("1100","110","/");
+        Assertions.assertEquals("10",actual);
     }
 
 }
