@@ -2,7 +2,6 @@ package com.company.model;
 
 public class TwoIntegerCalculator {
 
-
     private static String binary1;
     private static String operator;
     private static String binary2;
@@ -23,14 +22,14 @@ public class TwoIntegerCalculator {
         int decimalValue1 = Integer.parseInt(binary1,2);
         int decimalValue2 = Integer.parseInt(binary2,2);
 
-        if(operator.equals("*")){
+        if (operator.equals("*")){
             finalValue = decimalValue1 * decimalValue2;
             return finalValue;
         }
-        if(operator.equals("+")){
+        if (operator.equals("+")){
             finalValue = decimalValue1 + decimalValue2;
         }
-        if(operator.equals("-")){
+        if (operator.equals("-")){
             finalValue = decimalValue1 - decimalValue2;
         }
         if (operator.equals("/")){
