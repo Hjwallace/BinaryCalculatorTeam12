@@ -1,5 +1,6 @@
 package com.company.view;
 
+import com.company.model.SingleIntegerCalculator;
 import com.company.model.TwoIntegerCalculator;
 
 import javax.swing.*;
@@ -76,9 +77,11 @@ public class Main {
         buttonSquare.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*
-                    ADD SQUARE FUNCTION HERE
-                 */
+                inputField = (JTextArea) panelInputBox.getComponent(1);
+                outputField = (JTextArea) panelOutPut.getComponent(1);
+                SingleIntegerCalculator calculator = new SingleIntegerCalculator();
+                int result = calculator.calculationOfBinary(inputField.getText(), false);
+                outputField.setText(String.valueOf(result));
             }
         });
 
@@ -86,9 +89,11 @@ public class Main {
         buttonSquareRoot.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*
-                    ADD SQUARE ROOT FUNCTION HERE
-                 */
+                inputField = (JTextArea) panelInputBox.getComponent(1);
+                outputField = (JTextArea) panelOutPut.getComponent(1);
+                SingleIntegerCalculator calculator = new SingleIntegerCalculator();
+                int result = calculator.calculationOfBinary(inputField.getText(), true);
+                outputField.setText(String.valueOf(result));
             }
         });
 
@@ -115,9 +120,10 @@ public class Main {
         buttonClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*
-                    CLEAR INPUT AND OUTPUT
-                 */
+                inputField = (JTextArea) panelInputBox.getComponent(1);
+                outputField = (JTextArea) panelOutPut.getComponent(1);
+                inputField.setText("");
+                outputField.setText("");
             }
         });
 
