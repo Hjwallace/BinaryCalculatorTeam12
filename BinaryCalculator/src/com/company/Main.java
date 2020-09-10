@@ -13,9 +13,7 @@ public class Main {
     private JPanel panelInputBox;
     private JPanel panelOutPut;
     private JPanel panelFunctionsLeft;
-    private String binary1;
-    private String operator;
-    private String binary2;
+    private TwoIntegerCalculator TwointegerCalculator;
 
     public Main() {
 
@@ -45,9 +43,9 @@ public class Main {
         buttonMultiplication.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                operator = "*";
                 JTextArea inputField = (JTextArea) panelInputBox.getComponent(1);
-                binary1 = inputField.getText();
+                String binary1 = inputField.getText();
+                TwoIntegerCalculator.Multiply(binary1);
                 inputField.setText("");
 
             }
@@ -89,13 +87,8 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 JTextArea inputField = (JTextArea) panelInputBox.getComponent(1);
                 JTextArea outputfield = (JTextArea) panelOutPut.getComponent(1);
-                binary2 = inputField.getText();
-                if(operator.equals("*")){
-                    int decimalValue1 = Integer.parseInt(binary1,2);
-                    int decimalValue2 = Integer.parseInt(binary2,2);
-                    int multipliedValue = decimalValue1 * decimalValue2;
-                    outputfield.setText(Integer.toString(multipliedValue));
-                }
+                String binary2 = inputField.getText();
+                TwoIntegerCalculator.equals(binary2);
             }
         });
 
