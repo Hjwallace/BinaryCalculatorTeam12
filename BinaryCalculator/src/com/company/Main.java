@@ -45,7 +45,7 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 JTextArea inputField = (JTextArea) panelInputBox.getComponent(1);
                 String binary1 = inputField.getText();
-                TwoIntegerCalculator.Multiply(binary1);
+                TwoIntegerCalculator.multiply(binary1);
                 inputField.setText("");
 
             }

@@ -9,35 +9,34 @@ public class TwoIntegerCalculator {
 
     public TwoIntegerCalculator (){
         this.binary1 = "";
-        this. binary2 = "";
+        this.binary2 = "";
         this.operator = "";
     }
-    public static String Multiply(String binaryString){
+    public static String multiply(String binaryString){
         binary1 = binaryString;
         operator = "*";
         return "*";
     }
 
     public int equals(String binaryString){
-        int finalValue;
+        int finalValue = 0; //dummy value
+        int decimalValue1 = Integer.parseInt(binary1,2);
+        int decimalValue2 = Integer.parseInt(binary2,2);
+
         if(operator.equals("*")){
-            int decimalValue1 = Integer.parseInt(binary1,2);
-            int decimalValue2 = Integer.parseInt(binary2,2);
             finalValue = decimalValue1 * decimalValue2;
             return finalValue;
-
         }
         if(operator.equals("+")){
-
+            finalValue = decimalValue1 + decimalValue2;
         }
         if(operator.equals("-")){
-
+            finalValue = decimalValue1 - decimalValue2;
         }
         if (operator.equals("/")){
 
-        }else{
-            return 0;
         }
+        return finalValue;
     }
 
 }
