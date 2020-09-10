@@ -23,7 +23,7 @@ public class TwoIntegerCalculator {
         if(operator.equals("*")){
             int decimalValue1 = Integer.parseInt(binary1,2);
             int decimalValue2 = Integer.parseInt(binary2,2);
-            int finalValue = decimalValue1 * decimalValue2;
+            finalValue = decimalValue1 * decimalValue2;
             return finalValue;
 
         }
