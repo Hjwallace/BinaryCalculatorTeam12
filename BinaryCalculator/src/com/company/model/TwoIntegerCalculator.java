@@ -5,7 +5,7 @@ public class TwoIntegerCalculator {
 
     private static String binary1;
     private static String operator;
-    private String binary2;
+    private static String binary2;
 
     public TwoIntegerCalculator (){
         this.binary1 = "";
@@ -18,7 +18,7 @@ public class TwoIntegerCalculator {
         return "*";
     }
 
-    public int equals(String binaryString){
+    public static int equals(String binaryString){
         int finalValue = 0; //dummy value
         int decimalValue1 = Integer.parseInt(binary1,2);
         int decimalValue2 = Integer.parseInt(binary2,2);
@@ -34,7 +34,7 @@ public class TwoIntegerCalculator {
             finalValue = decimalValue1 - decimalValue2;
         }
         if (operator.equals("/")){
-
+            finalValue = decimalValue1 / decimalValue2;
         }
         return finalValue;
     }

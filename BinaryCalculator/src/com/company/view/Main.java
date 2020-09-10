@@ -88,9 +88,9 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JTextArea inputField = (JTextArea) panelInputBox.getComponent(1);
-                JTextArea outputfield = (JTextArea) panelOutPut.getComponent(1);
+                JTextArea outputField = (JTextArea) panelOutPut.getComponent(1);
                 String binary2 = inputField.getText();
-                TwoIntegerCalculator.equals(binary2);
+                outputField.setText(String.valueOf(TwoIntegerCalculator.equals(binary2)));
             }
         });
 
